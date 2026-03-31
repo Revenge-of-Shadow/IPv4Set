@@ -1,6 +1,9 @@
-#include "Set.h"
+#ifndef IPV4PREFIXSET
+#define IPV4PREFIXSET
+
 #include "IPv4Prefix.h"
-#include <cstdint>
+#include "Set.h"
+
 
 class IPv4PrefixSet : public Set<IPv4Prefix>{
 public:
@@ -29,3 +32,4 @@ public:
     }
     
 };
+#endif

@@ -1,4 +1,7 @@
-#include <cstdint>
+#ifndef IPV4PREFIX
+#define IPV4PREFIX
+
+#include "includes.h"
 
 class IPv4Prefix{
 
@@ -24,3 +27,4 @@ public:
     }
 
 };
+#endif

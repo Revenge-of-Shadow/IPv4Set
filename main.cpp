@@ -1,5 +1,4 @@
 #include "IPv4PrefixSet.h"
-//  Move includes to ifdefs
 //  Add documentation
 //  Check for checks
 //  Check for requirements

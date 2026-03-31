@@ -1,6 +1,7 @@
-#include <exception>
-#include <iostream>
-#include <stdexcept>
+#ifndef SET
+#define SET
+
+#include "includes.h"
 
 template<typename T> class Set{
 protected:
@@ -59,3 +60,4 @@ public:
     }
 
 };
+#endif 
