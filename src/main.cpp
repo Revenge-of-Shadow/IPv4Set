@@ -1,5 +1,4 @@
 #include "IPv4PrefixSet.h"
-//  Add documentation
 //  Check for checks
 //  Check for requirements
 int main(){
