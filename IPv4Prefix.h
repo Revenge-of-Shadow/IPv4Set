@@ -6,7 +6,7 @@ public:
     uint32_t base;
     uint8_t maskLength;
 
-    IPv4Prefix();
+    IPv4Prefix():base(0), maskLength(0){};
     IPv4Prefix(uint32_t base, uint8_t maskLength):
         base(base), maskLength(maskLength){};
 

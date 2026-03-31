@@ -1,13 +1,30 @@
-
-
-#include "Set.h"
-#include "IPv4Prefix.h"
+#include "IPv4PrefixSet.h"
+//  Move includes to ifdefs
+//  Add documentation
+//  Check for checks
+//  Check for requirements
 int main(){
 
-    IPv4Prefix pref(0x23531232, 16);
-    std::cout<<std::hex<<pref.base<<std::endl;
-    std::cout<<std::hex<<pref.getMask()<<std::endl;
-    std::cout<<std::hex<<pref.masked()<<std::endl;
+    IPv4PrefixSet IPset;
+
+    //  First two bytes the same.
+    std::cout<<IPset.add(0x23531232, 16)<<std::endl;   
+    std::cout<<IPset.add(0x23534351, 24)<<std::endl;
+    std::cout<<IPset.add(0x9881aF82, 8)<<std::endl;
+    std::cout<<IPset.add(0x9881aF82, 8)<<std::endl;
+    std::cout<<IPset.add(0xFFFFFFFF, 33)<<std::endl;
+
+
+    //  This one is for prefix 1.
+    std::cout<<IPset.check(0x23534315)<<std::endl;
+    //  This one is for prefix 2.
+    std::cout<<IPset.check(0x98534315)<<std::endl;
+    //  This one should miss. 
+    std::cout<<IPset.check(0x12124316)<<std::endl;
+
+    // std::cout<<std::hex<<pref.base<<std::endl;
+    // std::cout<<std::hex<<pref.getMask()<<std::endl;
+    // std::cout<<std::hex<<pref.masked()<<std::endl;
 
     return EXIT_SUCCESS;
 }
