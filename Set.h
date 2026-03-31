@@ -3,8 +3,8 @@
 #include <stdexcept>
 
 template<typename T> class Set{
-    short capacity;
-    short size;
+    int capacity;
+    int size;
     T* elements;
 
     void grow(){
@@ -15,7 +15,6 @@ template<typename T> class Set{
 
         delete[] elements;
         elements = new_elements;
-        new_elements = nullptr;
     }
 
 public:
@@ -28,8 +27,6 @@ public:
         if(size == capacity) grow(); 
         elements[size++] = val;
 
-        std::cout<<val<<" added.\tCount = "<<size<<std::endl;
-
         return true;
     }
 
@@ -40,7 +37,6 @@ public:
         --size;
         for(int i = ind; i < size; ++i){
             elements[i] = elements[i+1];
-            std::cout<<i<<"/"<<size<<" = "<<elements[i]<<std::endl;
         }
         return true;
         
@@ -52,10 +48,10 @@ public:
         return -1;
     }
 
-    T at(short ind) const{
+    T at(int ind) const{
         if(ind < 0 || ind >= size) 
             throw std::out_of_range("Requested index is out of range.");
         return elements[ind];
     }
-    short getSize() const{ return size; }
+    int getSize() const{ return size; }
 };
