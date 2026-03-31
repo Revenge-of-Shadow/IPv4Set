@@ -3,6 +3,7 @@
 #include <stdexcept>
 
 template<typename T> class Set{
+protected:
     int capacity;
     int size;
     T* elements;
@@ -20,6 +21,15 @@ template<typename T> class Set{
 public:
     Set():size(0), capacity(8){ elements = new T[capacity];};    
     ~Set(){delete[] elements;}
+
+    T at(int ind) const{
+        if(ind < 0 || ind >= size) 
+            throw std::out_of_range("Requested index is out of range.");
+        return elements[ind];
+    }
+
+    int getSize() const{ return size; }
+
 
     bool add(const T val){
         if(check(val) != -1) return false;
@@ -48,10 +58,4 @@ public:
         return -1;
     }
 
-    T at(int ind) const{
-        if(ind < 0 || ind >= size) 
-            throw std::out_of_range("Requested index is out of range.");
-        return elements[ind];
-    }
-    int getSize() const{ return size; }
 };
