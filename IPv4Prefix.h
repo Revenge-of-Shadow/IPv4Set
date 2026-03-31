@@ -20,7 +20,7 @@ public:
     }
 
     uint32_t masked() const{
-        return base & 
+        return base & getMask();
     }
 
 };
