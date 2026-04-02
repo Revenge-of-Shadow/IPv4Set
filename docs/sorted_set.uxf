@@ -23,7 +23,7 @@ int val;</panel_attributes>
       <w>220</w>
       <h>50</h>
     </coordinates>
-    <panel_attributes>int middle = avg(begin, end);
+    <panel_attributes>int middle := avg(begin, end);
 (middle is in between)</panel_attributes>
     <additional_attributes/>
   </element>
@@ -48,7 +48,7 @@ elements[middle] &gt; val?</panel_attributes>
       <h>60</h>
     </coordinates>
     <panel_attributes>type=decision
-end - begin &lt; 1
+end - begin &lt;= 1
 (place found)</panel_attributes>
     <additional_attributes/>
   </element>
@@ -142,7 +142,7 @@ style=wordwrap</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>(val is lower)
-end = middle</panel_attributes>
+end := middle</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -165,7 +165,7 @@ end = middle</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>(val is higher)
-begin = middle</panel_attributes>
+begin := middle</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

@@ -1,8 +1,9 @@
-#include "IPv4PrefixSet.h"
+#include "SortedSet.h"
 //  Check for checks
 //  Check for requirements
 int main(){
 
+    /*
     IPv4PrefixSet IPset;
 
     //  First two bytes the same.
@@ -23,6 +24,21 @@ int main(){
     // std::cout<<std::hex<<pref.base<<std::endl;
     // std::cout<<std::hex<<pref.getMask()<<std::endl;
     // std::cout<<std::hex<<pref.masked()<<std::endl;
+    */
+
+
+    SortedSet<int> set;
+
+    set.add(1);
+    set.add(2);
+    set.add(2);
+    set.add(5);
+    set.add(4);
+    set.add(6);
+    set.add(3);
+
+    for(int i = 0; i < set.getSize(); ++i)
+        std::cout<<set.at(i)<<std::endl;
 
     return EXIT_SUCCESS;
 }
