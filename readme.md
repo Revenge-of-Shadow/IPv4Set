@@ -51,6 +51,8 @@ While it would have been righteous to divide classes into .h and .cpp files, for
 
 ### Speed and sorting
 
+![Binary-sorted insert diagram](docs/Sorted_insert.png)
+
 I decided to first operate on unsorted set and then implement sorting. Unsorted set is still available and operational, since I separated classes **Set.h** and its child **SortedSet.h**.
 
 Resulting classes for IPv4 are **IPv4PrefixSet** and **IPv4PrefixSortedSet**.
