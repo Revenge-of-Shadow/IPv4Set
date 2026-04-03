@@ -5,7 +5,7 @@
 #include "Set.h"
 
 
-class IPv4PrefixSet : public Set<IPv4Prefix>{
+class IPv4PrefixSet : protected Set<IPv4Prefix>{
 public:
 
     bool add(const uint32_t& base, const uint8_t maskLength){

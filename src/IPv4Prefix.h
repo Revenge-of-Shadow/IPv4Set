@@ -17,6 +17,17 @@ public:
         return other.base == base && other.maskLength == maskLength;
     }
 
+    bool operator>(const IPv4Prefix& other){
+        return (masked() == other.masked())?
+                maskLength > other.maskLength:
+                masked() > other.masked();
+    }
+    bool operator<(const IPv4Prefix& other){
+        return (masked() == other.masked())?
+                maskLength < other.maskLength:
+                masked() < other.masked();
+    }
+
     uint32_t getMask() const{
         return (0xFFFFFFFF << (32-maskLength)) % 0x100000000;
 

@@ -22,6 +22,10 @@ A class to manage the address/mask pair and compute addresses with masks applied
 
 A template set class to manage abstract objects.
 
+### SortedSet.h
+
+A template class inheriting **Set.h** and applying sorting immediately on insertion. This enables **binary search**.
+
 ### IPv4PrefixSet.h
 
 A class inheriting **Set.h** and suited for **IPv4Prefix** specifically.
@@ -43,4 +47,4 @@ While it would have been righteous to divide classes into .h and .cpp files, for
 
 ### Speed and sorting
 
-While sorting could have brought about significant increase of speed if it was applied properly, it places the solution farther from the concept of the basic unordered set.
+I decided to first operate on unsorted set and then implement sorting. Unsorted set is still available and operational, since I separated classes **Set.h** and its child **SortedSet.h**.

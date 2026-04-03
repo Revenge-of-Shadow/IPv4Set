@@ -22,19 +22,21 @@ protected:
         }
     }
 
-    uint32_t find(const T& val, uint32_t begin, uint32_t end){
-        if(end - begin < 1){    //  One or two elements left.
-            if(Set<T>::elements[begin] == val)   //  val == first
+    int find(const T val, uint32_t begin, uint32_t end) const{
+
+        if(end - begin <= 1){    //  One or two elements left.
+            if(val == Set<T>::elements[begin])   //  val == first
                 return begin;
-            if(Set<T>::elements[end] == val)   //  val == last
+            if(val == Set<T>::elements[end])   //  val == last
                 return end;
             return -1;
         }
+
         else{   //  Continue splitting.
             uint32_t avg = begin + (end - begin)/2;
-            return (val < Set<T>::elements[avg])? 
-                getNewInd(val, avg, end):
-                getNewInd(val, begin, avg);
+            return (val > Set<T>::elements[avg])? 
+                find(val, avg, end):
+                find(val, begin, avg);
         }
     }
 public:
@@ -53,7 +55,7 @@ public:
         return true;
         
     }
-    bool check(const T& val) const{
+    int check(const T& val) const{
         return find(val, 0, Set<T>::size-1);
     }
 };

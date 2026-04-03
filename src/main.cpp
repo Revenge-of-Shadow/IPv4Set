@@ -29,14 +29,20 @@ int main(){
 
     SortedSet<int> set;
 
+    set.add(6);
     set.add(1);
     set.add(2);
     set.add(2);
     set.add(5);
     set.add(4);
-    set.add(6);
     set.add(3);
 
+    set.del(5);
+
+    for(int i = 0; i < set.getSize(); ++i)
+        std::cout<<set.at(i)<<std::endl;
+    set.add(5);
+    std::cout<<std::endl;
     for(int i = 0; i < set.getSize(); ++i)
         std::cout<<set.at(i)<<std::endl;
 
