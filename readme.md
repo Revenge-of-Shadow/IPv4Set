@@ -5,7 +5,7 @@ Is an implementation of a unique-value unsorted collection of address/mask pairs
 ## Usage
 Before use the program must be compiled. This can be done by running **comp.sh** on a Unix-based system.
 
-Otherwise the program can be compiled with any preferred C++ compiler. 
+Otherwise the program can be compiled with any preferred C++ compiler; command for **g++** is written inside of **comp.sh**.
 
 
 After the compilation the program can be run from the compiled executable file (**main.o** by default).
@@ -30,6 +30,10 @@ A template class inheriting **Set.h** and applying sorting immediately on insert
 
 A class inheriting **Set.h** and suited for **IPv4Prefix** specifically.
 
+### IPv4PrefixSortedSet.h
+
+A class inheriting **SortedSet.h** and suited for **IPv4Prefix**, stored in order and available for fast search.
+
 ### includes.h
 
 A shared file to access common **include**d libraries.
@@ -48,3 +52,5 @@ While it would have been righteous to divide classes into .h and .cpp files, for
 ### Speed and sorting
 
 I decided to first operate on unsorted set and then implement sorting. Unsorted set is still available and operational, since I separated classes **Set.h** and its child **SortedSet.h**.
+
+Resulting classes for IPv4 are **IPv4PrefixSet** and **IPv4PrefixSortedSet**.

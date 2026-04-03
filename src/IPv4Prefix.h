@@ -13,16 +13,29 @@ public:
     IPv4Prefix(uint32_t base, uint8_t maskLength):
         base(base), maskLength(maskLength){};
 
-    bool operator==(const IPv4Prefix& other){
+    //  Comparison with IP
+    bool operator==(const uint32_t& ip) const{
+        return masked() == (ip & getMask());
+    }
+    bool operator>(const uint32_t& ip) const{
+        return masked() > (ip & getMask());
+    }
+    bool operator<(const uint32_t& ip) const{
+        return masked() < (ip & getMask());
+    }
+
+
+    //  Comparison with IPv4Prefix
+    bool operator==(const IPv4Prefix& other) const{
         return other.base == base && other.maskLength == maskLength;
     }
 
-    bool operator>(const IPv4Prefix& other){
+    bool operator>(const IPv4Prefix& other) const{
         return (masked() == other.masked())?
                 maskLength > other.maskLength:
                 masked() > other.masked();
     }
-    bool operator<(const IPv4Prefix& other){
+    bool operator<(const IPv4Prefix& other) const{
         return (masked() == other.masked())?
                 maskLength < other.maskLength:
                 masked() < other.masked();
